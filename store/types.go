@@ -150,3 +150,7 @@ type CommitID struct {
 func (cid CommitID) IsZero() bool {
 	return cid.Version == 0 && len(cid.Hash) == 0
 }
+
+func (cid CommitID) String() string {
+	return fmt.Spritnf("CommitID{%v:%X}", cid.Hash, cid.Version)
+}
